@@ -86,38 +86,93 @@
     <div class="imagem">
         <img src="img/placa.jpeg" alt="imagem" class="imagem">
     </div>
-    <section class="menu-item">
-        <h2>BEM VINDO</h2> 
-        <h2>CARDÁPIO DO CHEFE</h2>
-        <p>~ Onde cada sabor conta uma história ~</p>
-    </section>
-    
-    <section class="menu-item">
-        <h2>Sashimi</h2>
-        <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
-        <span class="price">Pequeno: R$ 14,00 | Grande: R$ 20,00</span>
-        <div class="produto">
-            <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
-        </div>
-    </section>
 
-    <section class="menu-item">
-        <h2>Sashimi</h2>
-        <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
-        <span class="price">Pequeno: R$ 14,00 | Grande: R$ 20,00</span>
-        <div class="produto">
-            <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
-        </div>
-    </section>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 0;
+          padding: 20px;
+        }
+        .product {
+          display: inline-block;
+          margin: 10px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .quantity-input {
+          width: 40px;
+          text-align: center;
+        }
+        .buy-button {
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .esquerda {
+            display: flex;
+            justify-content: center;
+        }
+        .direita {
+            display: flex;
+            justify-content: center;
+            
+        }
 
-    <section class="menu-item">
-        <h2>Sashimi</h2>
-        <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
-        <span class="price">Pequeno: R$ 14,00 | Grande: R$ 20,00</span>
-        <div class="produto">
-            <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
-        </div>
-    </section>
+      </style>
+      </head>
+      <body>
+        <section class="menu-item">
+            <h2>BEM VINDO</h2> 
+            <h2>CARDÁPIO DO CHEFE</h2>
+            <p>~ Onde cada sabor conta uma história ~</p>
+        </section>
 
+        <div class="product">
+            <h2>Sashimi</h2>
+            <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
+            <div class="produto">
+                <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
+            </div>
+            <div class="esquerda">
+                <p>Pequeno: R$ 14,00</p>
+            </div>
+            <div class="product">
+                <label for="quantity1">Quantidade:</label>
+                <input type="number" id="quantity1" class="quantity-input" value="1">
+                <button class="buy-button" onclick="addToCart('Produto 1 (P)', 14, 'quantity1')">Comprar (P)</button>
+            </div>
+
+            <div class="direita">
+                <p>Grande: R$ 20,00</p>
+            </div>
+            
+            <div class="product">
+                <label for="quantity2">Quantidade:</label>
+                <input type="number" id="quantity2" class="quantity-input" value="1">
+                <button class="buy-button" onclick="addToCart('Produto 1 (G)', 20, 'quantity2')">Comprar (G)</button>
+            </div>
+        </div>
+      
+        <div id="cart"></div>
+      
+        <script>
+            function addToCart(productName, price, quantityId) {
+              const quantityInput = document.getElementById(quantityId);
+              const quantity = parseInt(quantityInput.value);
+              const total = price * quantity;
+              
+              const cart = document.getElementById('cart');
+              const cartItem = document.createElement('p');
+              cartItem.innerHTML = `${quantity}x ${productName} - Total: R$${total}`;
+              cart.appendChild(cartItem);
+              
+              quantityInput.value = 1;
+            }
+          </script>
 </body>
 </html>
