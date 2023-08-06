@@ -27,57 +27,92 @@
         }
 
         .menu-item h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10;
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: #ff0000; /* Cor de destaque vermelha */
         }
 
         .menu-item p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10;
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
 
         .menu-item .price {
-            display: block;
-            font-size: 1.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10;
             color: #fff; /* Cor branca */
         }
         
-        .conteudo {
-            overflow: hidden; /* Limpa o float */
-        }
-            
         .imagem {
-            float: left; /* Flutua a imagem para a esquerda */
-            margin-right: 10px; /* Cria espaço entre a imagem e o texto */
-            width: 100px; /* Defina a largura desejada */
-            height: auto; /* Mantém a proporção da imagem */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
         }
-        .texto {
-            position: relative; /* Define o posicionamento relativo */
-            top: 30px; /* Move o texto para baixo em 20 pixels */
-            left: 540px; /* Move o texto para a direita em 30 pixels */
+
+        .imagem img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .produto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+        }
+
+        .produto img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 200px;
+            height: 200px;
         }
     </style>
 </head>
 <body>
-    <div class="conteudo">
+    <div class="imagem">
         <img src="img/logo.jpeg" alt="imagem" class="imagem">
-        <h2 class="texto">Cardápio</h2>
     </div>
     
     <section class="menu-item">
         <h2>Sashimi</h2>
         <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
-        <img src="foto###" alt="Sashimi de Salmão">
-        <span class="price">Pequeno: R$ 18,00 | Grande: R$ 28,00</span>
+        <span class="price">Pequeno: R$ 14,00 | Grande: R$ 20,00</span>
+        <div class="produto">
+            <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
+        </div>
     </section>
 
     <section class="menu-item">
-        <h2>Nigiri</h2>
-        <p>Pequenas bolas de arroz cobertas com pedaços de peixe ou frutos do mar.</p>
-        <img src="foto###.jpg" alt="Nigiri de Atum">
+        <h2>Sashimi</h2>
+        <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
         <span class="price">Pequeno: R$ 14,00 | Grande: R$ 20,00</span>
+        <div class="produto">
+            <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
+        </div>
     </section>
+
+    <section class="menu-item">
+        <h2>Sashimi</h2>
+        <p>Finas fatias de peixe fresco servidas com molho de soja.</p>
+        <span class="price">Pequeno: R$ 14,00 | Grande: R$ 20,00</span>
+        <div class="produto">
+            <img src="img/logo.jpeg" alt="Sashimi de Salmão" class="produto">
+        </div>
+    </section>
+
 </body>
 </html>
