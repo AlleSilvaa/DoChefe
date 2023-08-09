@@ -23,8 +23,6 @@ function addToCart(productName, price, quantityId) {
     quantityInput.value = 1;
   }
 
-function finalizarPedido() {
+  function finalizarPedido() {
     window.location.href = 'https://wa.me/qr/TL334QYXM4A5K1';
 }
-
-document.getElementById('finalizarPedido').addEventListener('click', finalizarPedido);
